@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '6.5.1'
+}
+
+group 'me.eths'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+
+    maven {
+        url "https://repo.codemc.io/repository/maven-snapshots/"
+    }
+
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+    }
+
+    maven {
+        url "https://repo.viaversion.com"
+    }
+
+    maven {
+        url "https://repo.glaremasters.me/repository/concuncan/"
+    }
+
+}
+
+dependencies {
+    compileOnly "org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT"
+    compileOnly "com.viaversion:viaversion-api:4.9.0-23w41a-SNAPSHOT"
+    implementation "com.github.retrooper.packetevents:spigot:2.0.0-SNAPSHOT"
+}
+
+test {
+    useJUnitPlatform()
+}
