@@ -1,0 +1,6 @@
+name: LegacyAPI
+main: me.eths.legacyapi.LegacyPlugin
+version: 0.1
+author: Eths
+depend:
+  - packetevents

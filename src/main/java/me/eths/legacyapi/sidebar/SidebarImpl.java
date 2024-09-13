@@ -32,7 +32,7 @@ public class SidebarImpl {
     private final LegacyPlayer legacyPlayer;
     private String title = "";
     private List<String> lines = new ArrayList<>(); //Remove storing lines, just use lines size.
-    private boolean zeroBoard = true;
+    private boolean zeroBoard = false;
 
     public SidebarImpl(LegacyPlayer legacyPlayer) {
         this.legacyPlayer = legacyPlayer;
@@ -41,8 +41,8 @@ public class SidebarImpl {
     }
 
     public void tick(ISidebarAdapter adapter) {
-        setTitle(adapter.getTitle(legacyPlayer.getPlayer()));
-        setLines(adapter.getLines(legacyPlayer.getPlayer()));
+        setTitle(adapter.getTitle(legacyPlayer.toBukkitPlayer()));
+        setLines(adapter.getLines(legacyPlayer.toBukkitPlayer()));
     }
 
     public SidebarImpl setTitle(String newTitle) {
